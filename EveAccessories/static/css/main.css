@@ -1,0 +1,35 @@
+:root {
+    --primary: #4D1F08;
+    --secondary: #FFF2EB;
+    --bg-primary: #957461;
+}
+
+.cormorant-garamond-semibold {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.cormorant-garamond-bold {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.cormorant-garamond-bold-italic {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", system-ui;
+  font-weight: 300;
+  font-style: normal;
+}
