@@ -37,3 +37,22 @@ footer .social-icons svg {
     margin-right: 20px;
     fill: white;
 }
+
+img.hero-image {
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 50% !important;
+}
+.carousel-indicators button {
+    width: 16px !important;
+    height: 16px !important;
+    background-color: var(--primary) !important;
+}
+.carousel-inner {
+    max-height: 388px;
+    overflow-y: auto;
+}

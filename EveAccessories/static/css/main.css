@@ -4,6 +4,12 @@
     --bg-primary: #957461;
 }
 
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .cormorant-garamond-semibold {
     font-family: "Cormorant Garamond", serif;
     font-weight: 600;
@@ -31,5 +37,19 @@
 .poppins-light {
   font-family: "Poppins", system-ui;
   font-weight: 300;
+  font-style: normal;
+}
+
+.playfair-display-regular {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playfair-display-medium {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
 }
