@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="py-2 py-md-4">
+    <h1 class="cormorant-garamond-regular mb-5">Browse Categories</h1>
+    <div class="container text-center">
+        <div class="row">
+            {% include "partials/components/category_card.html" with category="necklace" %}
+            {% include "partials/components/category_card.html" with category="rings" %}
+            {% include "partials/components/category_card.html" with category="earrings" %}
+            {% include "partials/components/category_card.html" with category="bracelets" %}
+            {% include "partials/components/category_card.html" with category="necklace" %}
+            {% include "partials/components/category_card.html" with category="rings" %}
+            {% include "partials/components/category_card.html" with category="earrings" %}
+            {% include "partials/components/category_card.html" with category="bracelets" %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
