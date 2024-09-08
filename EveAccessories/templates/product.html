@@ -3,8 +3,44 @@
 
 {% block content %}
 <div class="py-2 py-md-4">
-    <div class="container text-center">
-        Product View
+    <div class="d-flex ps-0 gap-3 flex-column flex-md-row justify-content-between align-items-stretch my-4"
+         style="max-width: 1200px;">
+        <!-- Product Image Section -->
+        <div class="product-image d-flex justify-content-center" style="flex-basis: 50%;">
+            <img src="/media/images/ring.jpg" alt="Eyeshadow Palette with Mirror" class="img-fluid"
+                 style="max-width: min(60vw,100%); height: auto; border: 1px solid #ddd;">
+        </div>
+
+        <!-- Product Details Section -->
+        <div class="product-details" style="flex-basis: 45%; display: flex; flex-direction: column; ">
+            <h2>Eyeshadow Palette with Mirror</h2>
+            <p style="color: #666;">
+                The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye
+                looks. With a built-in mirror, it's convenient for on-the-go makeup application.
+            </p>
+
+            <!-- Rating Section -->
+            <div class="rating" style="color: #FFD700; font-size: 1.2rem;">
+                &#9733; &#9733; &#9733; &#9733; &#9734;
+            </div>
+
+            <!-- Price Section -->
+            <div class="price-section my-3" style="font-size: 1.5rem;">
+                <span class="old-price" style="text-decoration: line-through; color: #888;">$19.99</span>
+                <span class="new-price ml-2" style="color: #18A558;">$18.90</span>
+                <span style="color: red; font-size: 0.9rem;">5.5% off for a limited time!</span>
+            </div>
+
+            <!-- Stock and Brand -->
+            <div class="stock-brand my-3">
+                <span style="color: #28A745; font-weight: bold;">44 Items In Stock</span>
+                <p style="color: #666;">Brand: <strong>Glamour Beauty</strong></p>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button class="btn btn-primary btn-lg mt-auto" style="width: 100%;">Add to Cart</button>
+        </div>
     </div>
+
 </div>
 {% endblock content %}

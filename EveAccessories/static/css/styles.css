@@ -56,3 +56,14 @@ img.hero-image {
     max-height: 388px;
     overflow-y: auto;
 }
+
+.btn-primary {
+    background-color: var(--bg-primary);
+    border-color: var(--bg-primary);
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}

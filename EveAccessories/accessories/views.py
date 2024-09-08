@@ -1,21 +1,28 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
+from .models import Category, Product
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    top_categories = Category.objects.all()[:4]
+    new_products = Product.objects.order_by("updated_at")[:12]
+    return render(request, 'index.html', context={"categories": top_categories, "products": new_products})
 
 
-def categories(request):
-    return render(request, 'categories.html')
+class CategoriesView(ListView):
+    template_name = "categories.html"
+    model = Category
+    context_object_name = "categories"
 
 
 def products(request):
-    return render(request, 'products.html')
+    category = request.GET.get("category", "")
+    page = request.GET.get("page")
+    return render(request, 'products.html', context={"category": category})
 
 
-def product(request, id):
+def product(request, pk):
     return render(request, 'product.html')
 
 
