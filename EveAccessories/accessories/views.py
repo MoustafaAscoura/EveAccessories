@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Category, Product
 
 
@@ -22,8 +22,10 @@ def products(request):
     return render(request, 'products.html', context={"category": category})
 
 
-def product(request, pk):
-    return render(request, 'product.html')
+class ProductView(DetailView):
+    model = Product
+    template_name = 'product.html'
+    context_object_name = "product"
 
 
 def cart(request):

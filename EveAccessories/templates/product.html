@@ -7,34 +7,39 @@
          style="max-width: 1200px;">
         <!-- Product Image Section -->
         <div class="product-image d-flex justify-content-center" style="flex-basis: 50%;">
-            <img src="/media/images/ring.jpg" alt="Eyeshadow Palette with Mirror" class="img-fluid"
+            <img src="{{product.thumbnail}}" alt="Eyeshadow Palette with Mirror" class="img-fluid"
                  style="max-width: min(60vw,100%); height: auto; border: 1px solid #ddd;">
         </div>
 
         <!-- Product Details Section -->
         <div class="product-details" style="flex-basis: 45%; display: flex; flex-direction: column; ">
-            <h2>Eyeshadow Palette with Mirror</h2>
-            <p style="color: #666;">
-                The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye
-                looks. With a built-in mirror, it's convenient for on-the-go makeup application.
+            <h2>{{product.title}}</h2>
+            <p style="color: #666;">{{product.description}}
             </p>
 
             <!-- Rating Section -->
             <div class="rating" style="color: #FFD700; font-size: 1.2rem;">
-                &#9733; &#9733; &#9733; &#9733; &#9734;
+                {% for x in ""|ljust:product.rating %}
+                    &#9733;
+                {% endfor %}
+                {% for x in ""|ljust:product.empty_stars %}
+                    &#9734;
+                {% endfor %}
+
             </div>
 
             <!-- Price Section -->
-            <div class="price-section my-3" style="font-size: 1.5rem;">
-                <span class="old-price" style="text-decoration: line-through; color: #888;">$19.99</span>
-                <span class="new-price ml-2" style="color: #18A558;">$18.90</span>
-                <span style="color: red; font-size: 0.9rem;">5.5% off for a limited time!</span>
+            <div class="price-section my-3" style="font-size: 1.5rem;">EGP
+                {% if product.discount %}
+                    <span class="old-price" style="text-decoration: line-through; color: #888;">{{product.price}}</span>
+                {% endif %}
+                <span class="new-price ml-2" style="color: #18A558;">{{product.discounted_price}}</span>
             </div>
 
             <!-- Stock and Brand -->
             <div class="stock-brand my-3">
-                <span style="color: #28A745; font-weight: bold;">44 Items In Stock</span>
-                <p style="color: #666;">Brand: <strong>Glamour Beauty</strong></p>
+                <span style="color: #28A745; font-weight: bold;">{{product.stock}} Items In Stock</span>
+                <p style="color: #666;">Category: <strong>{{product.category}}</strong></p>
             </div>
 
             <!-- Add to Cart Button -->

@@ -21,13 +21,19 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="products")
     description = models.TextField()
     price = models.PositiveIntegerField(default=0)
+    stock = models.PositiveIntegerField(default=1, validators=[MinValueValidator(0)])
     discount = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
+    rating = models.PositiveIntegerField(default=5, validators=[MinValueValidator(0), MaxValueValidator(5)])
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     @property
     def discounted_price(self):
         return self.price - self.price * self.discount / 100
+
+    @property
+    def empty_stars(self):
+        return 5 - self.rating
 
     @property
     def thumbnail(self):
